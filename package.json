@@ -1,12 +1,12 @@
 {
-  "name": "Modele",
-  "description": "Formation Modèle",
+  "name": "Bdx.io 2016 Arduino",
+  "description": "Bdx.io 2016 Arduino",
   "version": "0.0.1",
   "author": "Zenika",
   "homepage": "https://www.zenika.com/Formation/notre-catalogue-formation.html",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Zenika/Formation--Modele"
+    "url": "https://github.com/gmembre-zenika/bdx.io-prez-2016-arduino"
   },
   "private": true,
   "dependencies": {

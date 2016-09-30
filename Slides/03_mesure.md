@@ -1,5 +1,18 @@
+## Thermomètre
 
-## Station météo
+- Sonde de température DS18B20
+- Bus 1 Wire, développé dans les années 90
+  - 3 fils (+5V, masse, data), longeur max : 100 m
+  - chaque composant à une adresse unique en 64 bit
+  - capteur de pression, porte logique, horloge...
+
+<figure style="margin-left: 450px;  width: 60%">
+    <img src="ressources/ds18b20.jpg" alt="" />
+</figure>
+
+
+
+## Limite de l'Arduino
 
 - L'arduino est autonome
   - Exemples : relevé de sondes de temperatures et pilotage de radiateur, drône quadricoptère, machine enigma...
@@ -8,7 +21,7 @@
 <br>
 Dès qu'il s'agit de faire plus intelligent (robot autonome, reconnaissance de voix, débitmètre de tireuse de bière...) une CPU plus puissante va être nécessaire.
 
-- Utiliser un ordinateur qui émet des ordres à l'arduino
+<i class="fa fa-arrow-right"></i> Utiliser un ordinateur qui émet des ordres à l'arduino
 
 
 

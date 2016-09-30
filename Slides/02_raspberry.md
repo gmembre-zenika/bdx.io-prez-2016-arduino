@@ -1,9 +1,9 @@
 ## Raspberry pi
-** www.raspberrypi.org**
+**www.raspberrypi.org**
 
-- 10 millions d'unités vendu (septembre 2016)
+- 1er exemplaire distribué en février 2012, 10 millions d'unités vendu
 - Compagnon idéal du bidouilleur en herbe
-  - petite taille, faible consommation donc embarquable
+  - petite taille, faible consommation donc embarquable facilement
   - clusters docker, HTPC, robot, mangeoire d'oiseau, sur ISS (!!)...
 - Spécifications : 
   - CPU Arm@700 Mhz
@@ -18,14 +18,18 @@
 
 
 
-## Communauté
+## OS et logiciels
 
-- Sous linux : raspbian dérivé de debian, arch...
-  - et windows...
-- 
+- Sous linux : 
+  - Raspbian = port non officiel d'une debian sur *armhf* <br> **www.raspbian.org**
+  - Archlinux
+  - et Windows 10...
+- Communautés très active
+ - La communauté Raspbian produit plus de paquets que le port officiel Debian (> 98%)
 
-<figure style="float: right; width: 30%">
+<figure style="float: right; width: 8%; margin-top: -400px">
     <img src="ressources/debian.png" alt="" />
+    <img src="ressources/archlinux-logo.png" alt="" />
 </figure>
 
 

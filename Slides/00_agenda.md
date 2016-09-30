@@ -8,6 +8,8 @@
 
 ## Sommaire
 
+Faire un shéma de l'ensemble
+
 <!-- .slide: id="master-toc" class="toc" -->
 
 - *[Arduino](#/1)*
@@ -18,4 +20,5 @@
 <!-- figure style="margin-top: 200px; float: right; width: 50%">
     <img src="ressources/docker-raspberry-pi-arduino.png" alt=""/>
 </figure -->
+
 

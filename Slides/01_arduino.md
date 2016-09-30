@@ -19,19 +19,13 @@
 
 <br>
 
-Caractéristiques d'un Arduino Uno
-
-- Microcontroleur ATMEL 8 bit @ 16 MHz
+- Fondé en 2008
+- Caractéristiques d'un Arduino Uno
+ - Microcontroleur ATMEL 8 bit @ 16 MHz
  - 32 *Ko* de Flash
  - 2 *Ko* de SRAM + 1 *Ko* de EEPROM
  - 14x I/O digitales
  - 8x entrées analogiques
-
-
-
-## En détails
-
-![](ressources/arduinounosmd.jpg)
 
 
 
@@ -108,8 +102,8 @@ $ screen /dev/cu.usbmodem1421
 
 ## Exemple de code
 
-- Code écrit en C = sketch
-- Clignotement d'une LED :
+- Code écrit en C (*sketch*)
+- *HelloWorld* = Clignotement d'une LED :
 
 ```c
 void setup() {
@@ -126,12 +120,9 @@ void loop() {
 ```
 
 L'API est riche malgré les contraintes de la plateforme : 
-```c
-digitalRead()
-analogRead() 
-analogWrite()
-...
-```
+
+ - fonctions de lecture d'une tension, de generation de signaux basiques
+ - accès aux bus les plus répandu
 
 
 
