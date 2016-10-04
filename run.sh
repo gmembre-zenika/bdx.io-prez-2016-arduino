@@ -58,7 +58,11 @@ retrieveFormationVersion(){
 
 getDockerAddress(){
   if commandExists docker-machine; then
-    docker-machine ip $DOCKER_MACHINE_NAME
+    if [ -z "${DOCKER_MACHINE_NAME:-}" ]; then
+        echo localhost
+    else
+        docker-machine ip $DOCKER_MACHINE_NAME
+    fi
   elif commandExists boot2docker; then
     echo `boot2docker ip`
   else
