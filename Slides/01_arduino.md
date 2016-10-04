@@ -1,6 +1,6 @@
 # La planète DIY
 
-<figure style="margin-top: 100px; float: left; width: 80%">
+<figure style="margin-top: 300px; margin-left: 130px; width: 80%;">
     <img src="ressources/arduinostarterkitsmall2.jpg" alt=""/>
 </figure>
 
@@ -119,7 +119,7 @@ void loop() {
 }
 ```
 
-L'API est riche malgré les contraintes de la plateforme : 
+L'API est riche malgré les contraintes de la plateforme :
 
  - fonctions de lecture d'une tension, de generation de signaux basiques
  - accès aux bus les plus répandu
@@ -129,14 +129,14 @@ L'API est riche malgré les contraintes de la plateforme :
 ## Comparaison avec du matériel connu
 
 
-|  Plateforme | CPU                                                       | RAM  | Flash | 
+|  Plateforme | CPU                                                       | RAM  | Flash |
 |-------------|-----------------------------------------------------------|------|-------|
 | Arduino     | Atmel@16 Mhz                                              | 2&nbsp;*Ko* |   32&nbsp;*Ko*  |
 | Rpbi 2      | Arm A7@900 Mhz Quad core                                  | 1&nbsp;Go | -     |
 | Samsung S4  | Arm A15@1.6 GHz Quad&nbsp;core +<br> Arm A7@1.2 Ghz Quad&nbsp;core | 2&nbsp;Go | 16&nbsp;Go |
 | MBP         | Intel i5 x86_64@2.7 Ghz Quad&nbsp;core | 8&nbsp;Go | 250&nbsp;Go |
 
- 
+
 <br>
 Consommation en Idle
 

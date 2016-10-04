@@ -1,8 +1,11 @@
-# Construire une station&nbsp;météo<br><span style="font-size:60%">en</span> NodeJS<br><span style="font-size:60%">avec un</span> Raspberry PI<br><span style="font-size:60%"> et un</span> Arduino
+<!-- .slide:  -->
 
-<!--figure style="margin-top: -200px; float: left;">
-    <img src="ressources/docker-raspberry-pi-arduino.png" alt=""/>
-</figure -->
+<h1 style="background: no-repeat url('ressources/pcb.jpg') !important;">
+<br>
+Construire une station&nbsp;météo<br><span style="font-size:60%">en</span> NodeJS<br><span style="font-size:60%">avec un</span> Raspberry PI<br><span style="font-size:60%"> et un</span> Arduino
+<br><br><br><br><br><br>
+</h1>
+
 
 
 
@@ -20,5 +23,3 @@ Faire un shéma de l'ensemble
 <!-- figure style="margin-top: 200px; float: right; width: 50%">
     <img src="ressources/docker-raspberry-pi-arduino.png" alt=""/>
 </figure -->
-
-
