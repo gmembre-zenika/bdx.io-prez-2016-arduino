@@ -1,0 +1,2 @@
+docker run -d -p 8083:8083 -p 8086:8086  -v /home/pi/influxdb:/data --name 'influxdb' rpi/influxdb
+docker run -d -p 3000:3000 -v /home/pi/grafana:/data --name 'grafana' rpi/grafana

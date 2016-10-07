@@ -1,0 +1,12 @@
+{
+  "name": "arduino",
+  "version": "1.0.0",
+  "description": "Interfaçage d'un arduino + sonde DS18B20 vers une base InfluxDB",
+  "main": "DS18B20.js",
+  "author": "Guillaume Membré",
+  "license": "DWYW",
+  "dependencies": {
+    "influx": "^4.2.3",
+    "johnny-five": "^0.10.1"
+  }
+}
