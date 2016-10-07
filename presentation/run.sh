@@ -30,6 +30,7 @@ usage(){
 }
 
 checkInstall(){
+  mkdir -p CahierExercices PDF
   commandExists docker || { echo "docker must be installed" >&2; exit 1; }
 }
 
