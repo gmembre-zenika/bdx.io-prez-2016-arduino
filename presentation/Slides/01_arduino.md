@@ -11,21 +11,21 @@
 
 
 <figure style="position: absolute; top: 350px; right: 0; width: 40%">
-    <img src="ressources/arduinounosmd2.jpg" alt="" />
+    <img src="ressources/arduino-micro.jpg" alt="" />
 </figure>
 
-**www.arduino.cc**
+**http://www.arduino.cc/** et **http://www.arduino.org/**
 > Arduino is an open-source prototyping platform based on easy-to-use hardware and software.
 
 <br>
 
 - Fondé en 2008
-- Caractéristiques d'un Arduino Uno
+- Caractéristiques d'un Arduino Micro
  - Microcontroleur ATMEL 8 bit @ 16 MHz
  - 32 *Ko* de Flash
- - 2 *Ko* de SRAM + 1 *Ko* de EEPROM
- - 14x I/O digitales
- - 8x entrées analogiques
+ - 2.5 *Ko* de SRAM + 1 *Ko* de EEPROM
+ - 20x E/S numériques
+ - 12x E/S analogiques
 
 
 
@@ -39,13 +39,13 @@
 
 
 
-## Pourquoi ça marche ?
+## Raisons du succès ?
 <br>
 
-> Pour programmer un micro controleur, <br>il faut un microcontroleur programmé...
+> Pour programmer un micro-contrôleur, <br>il faut un micro-contrôleur programmé...
 
 <br>
-Problème de la poule et l'oeuf
+*Problème de la poule et l'oeuf*
 
 <figure style="margin-top: -100px; float: left; margin-left: 20%">
     <img src="ressources/poule_oeuf_fond_blanc.jpg" alt=""/>
@@ -59,16 +59,15 @@ Problème de la poule et l'oeuf
     <img src="ressources/arduino_Logo.png" alt=""/>
 </figure>
 
-<br>
-Arduino intègre sur une même platine
 
+- Arduino intègre sur une même platine :
  - un programmateur (déjà programmé...) + un microcontroleur de "run"
  - une prise USB + des connecteurs multi-fonctions
- - Logiciels libre et gratuit
-    - bootloader ( ~ "bios d'un PC" )
-    - SDK + chaine de cross compilation + IDE simple
-    - Multi plateforme
- - ~ 30 € la platine
+- Logiciels libres et gratuits :
+  - bootloader ( ~ "bios/UEFI d'un PC" )
+  - SDK + chaine de cross compilation + IDE simple
+  - Multi plateforme
+- Tarif : ~ 5 <i class="fa fa-arrow-right"></i> 30 €
 
 
 
@@ -114,7 +113,7 @@ void setup() {
 void loop() {
   digitalWrite(13, HIGH);   // allume la LED (=> niveau logique 1 = +5V)
   delay(1000);              // attente d'1 seconde
-  digitalWrite(13, LOW);    // eteint la LED (=> niveau logique 0 = 0V)
+  digitalWrite(13, LOW);    // éteint la LED (=> niveau logique 0 = 0V)
   delay(1000);
 }
 ```
@@ -122,7 +121,7 @@ void loop() {
 L'API est riche malgré les contraintes de la plateforme :
 
  - fonctions de lecture d'une tension, de generation de signaux basiques
- - accès aux bus les plus répandu
+ - accès aux bus matériel les plus répandu (I2C, 1 Wire...)
 
 
 
