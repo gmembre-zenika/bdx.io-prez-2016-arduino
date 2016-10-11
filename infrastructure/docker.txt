@@ -1,2 +1,24 @@
+# docker
 docker run -d -p 8083:8083 -p 8086:8086  -v /home/pi/influxdb:/data --name 'influxdb' rpi/influxdb
 docker run -d -p 3000:3000 -v /home/pi/grafana:/data --name 'grafana' rpi/grafana
+
+docker network create arduino
+docker network connect arduino grafana
+docker network connect arduino influxdb
+
+# data
+## linux
+for i in *.log; do cat $i | sed "s/=/ /g" | awk '{print "temp value=" $6 + 7; system("date --date=\"" $1 " " $2 "\" +%s000000000")}' | sed "N;s/\n/ /" > rest; curl -i -XPOST 'http://raspberrypi:8086/write?db=temperature' --data-binary @rest; done
+
+## mac
+for i in *.log; do cat $i | sed "s/=/ /g" | awk '{print "temp value=" $6 + 7; system("date  -j -f \"%Y-%m-%d %H:%M:%S\" \"" $1 " " $2 "\" \"+%s\"")}' | sed "N;s/\n/ /" > rest; curl -i -XPOST 'http://raspberrypi:8086/write?db=temperature' --data-binary @rest; done
+
+
+ip raspberrypi : 10.0.2.200
+
+
+ssh pi@raspberrypi -C sudo date \"--set=$(date "+%Y-%m-%d %H:%M:%S")\"
+
+
+
+grafana : http://raspberrypi:3000/login
