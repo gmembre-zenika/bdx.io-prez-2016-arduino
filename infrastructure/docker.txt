@@ -16,9 +16,11 @@ for i in *.log; do cat $i | sed "s/=/ /g" | awk '{print "temp value=" $6 + 7; sy
 
 ip raspberrypi : 10.0.2.200
 
-
 ssh pi@raspberrypi -C sudo date \"--set=$(date "+%Y-%m-%d %H:%M:%S")\"
 
 
 
 grafana : http://raspberrypi:3000/login
+
+
+si pas de données, alors mettre le pi à l'heure

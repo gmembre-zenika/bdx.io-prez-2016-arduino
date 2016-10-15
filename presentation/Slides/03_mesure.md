@@ -1,13 +1,17 @@
 ## Thermomètre
 
 - Sonde de température *DS18B20*
+- Caractéristiques :  -55°C &rarr; +125°C, Résolution 9/12-bit
 - Bus *1 Wire*, développé dans les années 90
   - 3 fils (+5V, masse, data), longeur max : 100 m
   - chaque composant à une adresse unique en 64 bit
-  - capteur de pression, porte logique, horloge...
 
-<figure style="margin-left: 450px;  width: 60%">
+<figure style="position: absolute; top: 70px; right: -100px; width: 50%">
     <img src="ressources/ds18b20.jpg" alt="" />
+</figure>
+
+<figure style="position: absolute; top: 370px; left: 170px">
+    <img src="ressources/ds1820_uc_interface.png" />
 </figure>
 
 
@@ -15,35 +19,44 @@
 ## Montage
 
 - Montage très simple
-<figure>
-    <img src="ressources/montage_ds18b20.png" alt="" />
-</figure>
-- Sketch compliqué lié au dialogue sur le bus *1 Wire*
+![](ressources/montage_ds18b20.png)
+
+
+
+## Sketch de lecture
+- Sketch non trivial à cause du dialogue sur le bus *1 Wire*
+- ~110 lignes &rarr; 8,5 ko de flash, ~360 octets de RAM
+- exemple de sortie :
+
+```
+ROM = 28 65 DC 33 4 0 0 17
+  Chip = DS18B20
+  Data = 1 43 1 4B 46 7F FF D 10 BD  CRC=BD
+  Temperature = 20.19 Celsius, 68.34 Fahrenheit
+```
 
 
 
 ## Limites de l'Arduino
 
-- L'Arduino est autonome et très peu de ressources
-  - Contraintes : le programme doit tenir dans 32 Ko de flash et 1 Ko de RAM...
+- L'Arduino dispose de très peu de ressources
+  - Contraintes : le programme doit tenir dans 32 Ko de flash et 2,5 Ko de RAM...
   - Exemples : relevé de sondes de temperatures et pilotage de radiateur, drône quadricoptère, machine enigma...
-  - Connectivité avec le monde extérieur très limitée
-
-<br>
-
+  - Connectivité avec le monde extérieur très limitée (pas d'eth ou wifi sur les modèles les plus simple)
 - Dès qu'il s'agit de faire plus intelligent (robot autonome, reconnaissance de voix, graphique temps réel...) une CPU plus puissante va être nécessaire.
 
 <br>
 
-*<i class="fa fa-lightbulb-o" style="font-size: 150%"></i>* Utiliser un hôte qui utilise l'Arduino comme un esclave en lui émettant des ordres via le port série
+*<i class="fa fa-lightbulb-o" style="font-size: 200%; color: orange"></i>* Utiliser un hôte qui utilise l'Arduino comme un esclave en lui émettant des ordres via le port série
 
 
 
 ## Communication série
 
 - 1ère solution : communiquer directement avec le port serie en émettant des ordres en format texte
-  - Très simple à mettre en oeuvre
-  - Ultra documenté
+  - Simplicité : <i class="fa fa-star" style="font-size: 150%; color: orange"></i><i class="fa fa-star" style="font-size: 150%; color: orange"></i><i class="fa fa-star-o" style="font-size: 150%; color: orange"></i>
+  - Documentation : <i class="fa fa-star" style="font-size: 150%; color: orange"></i><i class="fa fa-star" style="font-size: 150%; color: orange"></i><i class="fa fa-star" style="font-size: 150%; color: orange"></i>
+  - Evolutivité : <i class="fa fa-star" style="font-size: 150%; color: orange"></i><i class="fa fa-star-o" style="font-size: 150%; color: orange"></i><i class="fa fa-star-o" style="font-size: 150%; color: orange"></i> (maintient du code Arduino et hôte)
   - Exemple de sketch : **https://gitlab.com/coliss86/arduino-controller**
 
 ```
@@ -65,19 +78,32 @@ Command available :
 
 ## Solution plus évoluée
 
+- Utiliser un protocole binaire d'échange sur le port serie
+ - Transmission plus fiable
+ - Sketch spécifique sur l'Arduino
+ - Librairies clientes coté hôte
+<br><br>
+ - Simplicité : <i class="fa fa-star" style="font-size: 150%; color: orange"></i><i class="fa fa-star-half-o" style="font-size: 150%; color: orange"></i><i class="fa fa-star-o" style="font-size: 150%; color: orange"></i>
+ - Documentation : <i class="fa fa-star" style="font-size: 150%; color: orange"></i><i class="fa fa-star" style="font-size: 150%; color: orange"></i><i class="fa fa-star" style="font-size: 150%; color: orange"></i>
+ - Evolutivité : <i class="fa fa-star" style="font-size: 150%; color: orange"></i><i class="fa fa-star" style="font-size: 150%; color: orange"></i><i class="fa fa-star" style="font-size: 150%; color: orange"></i>
+
+
+
+## Librairies
 - *Firmata* : **https://github.com/firmata/arduino**
-  - Sketch rendant l'Arduino esclave d'un hôte
-  - Communication via le port série (USB) en binaire
+  - Protocole très similaire au MIDI (commande de 8 bits, data : 7 bits)
+  - Implémentation pour plusieurs micro-contrôleurs
+  - Sketch rendant l'Arduino esclave d'un hôte<br>&rArr; l'Arduino n'est plus autonome
   - Documenté, libre et open source
-  - De nombreux languages ont une lib kivabien &copy; <br>python, perl, java, php, golang, *javascript*...
 
 - *Johnny-five* : **http://johnny-five.io/**
-  - Lib NodeJS s'interfacant avec ce firmware
+  - Lib Node.js s'interfacant avec ce protocole
+  - Documentée, illustrée, libre et open source
 
 <br>
-*<i class="fa fa-arrow-right"></i>* Le Raspberry Pi exécutera le programme en NodeJS<br> pour piloter l'Arduino
+*&rArr;* Le Raspberry Pi exécutera le programme en Node.js<br> pour piloter l'Arduino
 
-<figure style="margin-top: -350px; width: 50%; margin-right: -120px; float: right">
+<figure style="position: absolute; top: 300px; width: 50%; right: -100px;">
     <img src="ressources/heres-johnny.png" alt="" />
 </figure>
 
@@ -85,6 +111,9 @@ Command available :
 
 ## Johnny-five
 
+- *Johnny-five* intègre une API de très haut niveau s'interfaçant avec :
+ - de nombreux composants du marché : servo, relais, moteur pas à pas, altimètre, LCD...
+ - les bus les plus répandu : I2C et OneWire
 - Hello world :
 
 ```javascript
@@ -101,9 +130,9 @@ board.on("ready", function() {
 
 
 
-## Mise en oeuvre avec la sonde
+## Relevé de température
 
-- *Johnny-five* intègre une API de très haut niveau s'interfaçant avec de nombreux composants du marché
+- Mise en oeuvre avec la sonde
 
 ```javascript
 board.on("ready", function() {
@@ -138,10 +167,10 @@ if (type_s) {
 - L'objectif final est de tracer des courbes de température
 
 - *Influxdb* : **https://www.influxdata.com/**
- - base nosql temporelle (les données sont indexées sur un timestamp précis la nanoseconde)
+ - base nosql temporelle : les données sont indexées sur un timestamp précis la nanoseconde
 - *Grafana* : **http://grafana.org/**
  - Tableau de bord compatible avec de nombreuses sources de métriques
- - met en forme des données sous forme de graphique
+ - Mise en forme des données sous forme de graphique
 
 <figure style="float: right; width: 8%; margin-top: -370px">
    <img src="ressources/influxdb.png" alt="" />
@@ -158,6 +187,7 @@ if (type_s) {
 ## Alimentation de la base
 
 - Appel REST sur la base *Influxdb* pour ajouter périodiquement les rélevés de temperature
+ - Valeurs de la forme : ```<serie> value=<valeur> [ts en ns]```
 
 ```javascript
 var influx = require('influx');
@@ -201,11 +231,18 @@ board.on('ready', function() {
 
 ## All together
 
-- *Grafana* et *Influxdb* sont déployés sous forme de conteneurs *Docker* sur le *Raspberry Pi*
-<br><br>*<i class="fa fa-warning" style="font-size: 150%"></i>* Obligation de reconstruire les images from scratch car les images habituelles sont conçues pour *x86 amd64* et non *armhf*
-- Montage électronique
+- Assemblage électronique
 
-** Ajouter photo**
+<figure style="position: absolute; top: 150px; width: 80%; ">
+    <img src="ressources/photo.jpg" alt="" />
+</figure>
+
+
+
+## All together
+
+- *Grafana* et *Influxdb* sont déployés sous forme de conteneurs *Docker* sur le *Raspberry Pi*
+<br><br>*<i class="fa fa-warning" style="font-size: 150%"></i>* Obligation de reconstruire les images from scratch car les images disponible sur le Docker Hub sont en très grand majorité pour *x86 amd64* et non *armhf*
 
 
 

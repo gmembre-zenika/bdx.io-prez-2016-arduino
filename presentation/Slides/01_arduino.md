@@ -6,7 +6,6 @@
 
 
 
-
 ## Arduino : qu'est ce ?
 
 
@@ -23,7 +22,7 @@
 - Caractéristiques d'un Arduino Micro
  - Microcontroleur ATMEL 8 bit @ 16 MHz
  - 32 *Ko* de Flash
- - 2.5 *Ko* de SRAM + 1 *Ko* de EEPROM
+ - 2.5 *Ko* de RAM + 1 *Ko* de EEPROM
  - 20x E/S numériques
  - 12x E/S analogiques
 
@@ -63,39 +62,36 @@
 - Arduino intègre sur une même platine :
  - un programmateur (déjà programmé...) + un microcontroleur de "run"
  - une prise USB + des connecteurs multi-fonctions
+- Shéma electronique libre
 - Logiciels libres et gratuits :
-  - bootloader ( ~ "bios/UEFI d'un PC" )
+  - bootloader ( &asymp; "bios/UEFI d'un PC" )
   - SDK + chaine de cross compilation + IDE simple
   - Multi plateforme
-- Tarif : ~ 5 <i class="fa fa-arrow-right"></i> 30 €
+- Tarif : &asymp; 5 &rarr; 30 €
+
+
+
+## Autres modèles & clones
+
+- Nombreuses variantes avec plus de I/O, plus de mémoire, un processeur Intel...
+- La license libre de l'ensemble à donné naissance à de nombreux clone
+  - Funduino, Nanode, Freeduino
+
+<figure style="position: absolute; top: 330px; width: 40%">
+    <img src="ressources/lilyPad.jpg" alt=""/>
+</figure>
+<figure style="position: absolute; top: 330px; right: 0; width: 60%">
+    <img src="ressources/funduino-uno.jpeg" alt=""/>
+</figure>
+
 
 
 
 ## Extensions
 
-Shield = carte d'extension se branchant sur les pins de la carte
+- Shield = carte d'extension se branchant sur les pins de la carte
 
 ![](ressources/shield.jpg)
-
-
-
-## Connexion
-
-- USB avec un PC
- -  Alimentation de la carte + shield
- -  Port série émulé sur USB
-   - Facile d'accès
-   - Interopérable
-<br> <br> <br>
-
-Accès linux
-```bash
-$ cu -l /dev/ttyACM0 -s 9600
-```
-Mac OS X
-```bash
-$ screen /dev/cu.usbmodem1421
-```
 
 
 
@@ -125,6 +121,40 @@ L'API est riche malgré les contraintes de la plateforme :
 
 
 
+## Connexion
+
+- USB avec un PC
+-  Alimentation de la carte + shield
+-  Port série émulé sur USB
+  - Facile d'accès
+  - Interopérable
+
+<figure style="position: absolute; top: 500px; right: 0; width: 30%">
+  <img src="ressources/usb.jpg" alt=""/>
+</figure>
+
+
+
+## Communication serie
+
+- Le SDK fournit des primitives pour écrire et lire sur le port serie coté Arduino
+- Coté hôte, il suffit d'ouvrir un terminal serie
+  - soit celui de l'IDE
+  - un autre outil (```cu``` sous linux, ```screen``` sous OS X)
+
+```c
+Serial.begin(9600);
+Serial.print("Hello world.");
+Serial.print(78);
+Serial.print(1.23456);
+Serial.print('N');
+```
+<figure style="position: absolute; top: 370px; right: 0; width: 60%">
+   <img src="ressources/serial.png" alt=""/>
+</figure>
+
+
+
 ## Comparaison avec du matériel connu
 
 
@@ -141,6 +171,6 @@ Consommation en Idle
 
 | Plateforme | Idle (W)  | Burn (W)
 |------------|-----|-----|
-| Arduino    | 0.170 (=> 0.011) | 0.2 |
+| Arduino    | 0.170 (&rarr; 0.011) | 0.2 |
 | Rpbi 2     | 1.1  |  4.5 |
 | Tour de gamer | - | 600-1000 W |
