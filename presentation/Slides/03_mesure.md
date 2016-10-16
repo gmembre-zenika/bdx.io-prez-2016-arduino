@@ -231,6 +231,21 @@ board.on('ready', function() {
 
 ## All together
 
+- Grafana
+
+<figure style="position: absolute; top: 150px; left: 0px; width: 40%; ">
+    <img src="ressources/grafana-datasource.png" alt="" />
+</figure>
+
+<figure style="position: absolute; top: 150px; right: 0; width: 60%; ">
+    <img src="ressources/grafana-dashboard.png" alt="" />
+</figure>
+
+
+
+
+## All together
+
 - Assemblage électronique
 
 <figure style="position: absolute; top: 150px; width: 80%; ">
@@ -243,6 +258,10 @@ board.on('ready', function() {
 
 - *Grafana* et *Influxdb* sont déployés sous forme de conteneurs *Docker* sur le *Raspberry Pi*
 <br><br>*<i class="fa fa-warning" style="font-size: 150%"></i>* Obligation de reconstruire les images from scratch car les images disponible sur le Docker Hub sont en très grand majorité pour *x86 amd64* et non *armhf*
+
+<figure style="position: absolute; top: 400px; right: -150px; width: 80%; ">
+    <img src="ressources/docker-logo.jpg" alt="" />
+</figure>
 
 
 

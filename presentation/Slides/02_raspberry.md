@@ -22,7 +22,7 @@
 - Sous linux :
   - Raspbian = port non officiel d'une debian sur *armhf* <br> **http://www.raspbian.org**
   - Archlinux
-  - et Windows 10...
+- et Windows 10...
 - Communauté très active
  - Le projet Raspbian produit plus de paquets que le port officiel Debian
 - Compagnon idéal du bidouilleur en herbe

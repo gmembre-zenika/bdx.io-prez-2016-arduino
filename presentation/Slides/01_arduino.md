@@ -144,6 +144,7 @@ L'API est riche malgré les contraintes de la plateforme :
 
 ```c
 Serial.begin(9600);
+
 Serial.print("Hello world.");
 Serial.print(78);
 Serial.print(1.23456);
