@@ -265,6 +265,24 @@ board.on('ready', function() {
 
 
 
+## Et ensuite ?
+
+- A ce niveau, il va devenir aisé d'ajouter des nouveaux capteurs :
+  - *DHT11* : mesure d'humidité
+  - *BMP180* : capteur de pression atmosphérique
+  - Capteur d'humidité de sol
+  - ...
+
+<figure style="position: absolute; top: 100px; right: 0px; width: 20%; ">
+    <img src="ressources/DHT11.jpg" alt="" />
+</figure>
+
+<figure style="position: absolute; top: 300px; right: 0px; width: 20%; ">
+    <img src="ressources/BMP180.jpg" alt="" />
+</figure>
+
+
+
 ## Démo
 
 <figure style="margin-top: 0%; margin-left: 15%; width: 70%">
