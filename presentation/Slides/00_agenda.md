@@ -17,3 +17,25 @@ Construire une station&nbsp;météo<br><span style="font-size:60%">en</span> Nod
 </figure>
 <br><br><br><br><br>
 *<span style="font-size:130%">Le tout sans écrire une ligne de C !</span>*
+
+
+
+## Qui suis-je ?
+
+- Consultant et formateur chez *Zenika Nantes*
+
+- Mise en place de démarche dev-ops 
+
+- Développeur Java depuis 10 ans, en transition sur du grails *<i class="fa fa-thumbs-up"></i>*
+
+- Mes hobbies : DIY, Raspberry Pi, Arduino
+<br><br>
+**http://www.monbook.tech**
+
+<figure style="position: absolute; top: 50px; width: 40%; right: 0px;">
+    <img src="ressources/Logo_arrondi_Horizontal.png" alt=""/>
+</figure>
+
+<figure style="position: absolute; top: 400px; width: 40%; left: 300px;">
+    <img src="ressources/webcam.jpg" alt=""/>
+</figure>
