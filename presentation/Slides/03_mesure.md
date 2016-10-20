@@ -53,7 +53,7 @@ ROM = 28 65 DC 33 4 0 0 17
 
 ## Communication série
 
-- 1ère solution : communiquer directement avec le port serie en émettant des ordres en format texte
+- 1ère solution : communiquer directement avec le port série en émettant des ordres en format texte
   - Simplicité : <i class="fa fa-star" style="font-size: 150%; color: orange"></i><i class="fa fa-star" style="font-size: 150%; color: orange"></i><i class="fa fa-star-o" style="font-size: 150%; color: orange"></i>
   - Documentation : <i class="fa fa-star" style="font-size: 150%; color: orange"></i><i class="fa fa-star" style="font-size: 150%; color: orange"></i><i class="fa fa-star" style="font-size: 150%; color: orange"></i>
   - Evolutivité : <i class="fa fa-star" style="font-size: 150%; color: orange"></i><i class="fa fa-star-o" style="font-size: 150%; color: orange"></i><i class="fa fa-star-o" style="font-size: 150%; color: orange"></i> (maintient du code Arduino et hôte)
@@ -78,7 +78,7 @@ Command available :
 
 ## Solution plus évoluée
 
-- Utiliser un protocole binaire d'échange sur le port serie
+- Utiliser un protocole binaire d'échange sur le port série
  - Transmission plus fiable
  - Sketch spécifique sur l'Arduino
  - Librairies clientes coté hôte
@@ -187,7 +187,7 @@ if (type_s) {
 ## Alimentation de la base
 
 - Appel REST sur la base *Influxdb* pour ajouter périodiquement les rélevés de temperature
- - Valeurs de la forme : ```<serie> value=<valeur> [ts en ns]```
+ - Valeurs de la forme : ```<série> value=<valeur> [ts en ns]```
 
 ```javascript
 var influx = require('influx');

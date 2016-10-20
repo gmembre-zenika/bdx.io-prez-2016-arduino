@@ -137,10 +137,10 @@ L'API est riche malgré les contraintes de la plateforme :
 
 
 
-## Communication serie
+## Communication série
 
-- Le SDK fournit des primitives pour écrire et lire sur le port serie coté Arduino
-- Coté hôte, il suffit d'ouvrir un terminal serie
+- Le SDK fournit des primitives pour écrire et lire sur le port série coté Arduino
+- Coté hôte, il suffit d'ouvrir un terminal série
   - soit celui de l'IDE
   - un autre outil (```cu``` sous linux, ```screen``` sous OS X)
 
