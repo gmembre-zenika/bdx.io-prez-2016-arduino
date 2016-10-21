@@ -24,18 +24,22 @@ Construire une station&nbsp;météo<br><span style="font-size:60%">en</span> Nod
 
 - Consultant et formateur chez *Zenika Nantes*
 
-- Mise en place de démarche dev-ops 
+- Mise en place de démarche dev-ops
 
 - Développeur Java depuis 10 ans, en transition sur du grails *<i class="fa fa-thumbs-up"></i>*
 
 - Mes hobbies : DIY, Raspberry Pi, Arduino
 <br><br>
 **http://www.monbook.tech**
+<br>
+**https://github.com/gmembre-zenika/**
+<br>
+**https://gitlab.com/coliss86/**
 
 <figure style="position: absolute; top: 50px; width: 40%; right: 0px;">
     <img src="ressources/Logo_arrondi_Horizontal.png" alt=""/>
 </figure>
 
-<figure style="position: absolute; top: 400px; width: 40%; left: 300px;">
+<figure style="position: absolute; top: 330px; width: 50%; right: 0px;">
     <img src="ressources/webcam.jpg" alt=""/>
 </figure>
