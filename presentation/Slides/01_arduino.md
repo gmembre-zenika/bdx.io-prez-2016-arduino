@@ -46,8 +46,8 @@
 <br>
 *Problème de la poule et l'oeuf*
 
-<figure style="margin-top: -100px; float: left; margin-left: 20%">
-    <img src="ressources/poule_oeuf_fond_blanc.jpg" alt=""/>
+<figure style="position: absolute; left: 300px; top: 250px">
+    <img src="ressources/poule_oeuf_fond_blanc.png" alt=""/>
 </figure>
 
 
