@@ -1,6 +1,6 @@
 # La planète DIY
 
-<figure style="margin-top: 300px; margin-left: 130px; width: 80%;">
+<figure style="position: absolute; top: 250px; left: 140px; width: 80%;">
     <img src="ressources/arduinostarterkitsmall2.jpg" alt=""/>
 </figure>
 
